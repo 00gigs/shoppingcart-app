@@ -26,6 +26,7 @@ function getProductData(id){
     return productData
 }
 
-const productStore = {productsArray ,getProductData }
+const productStore = {productsArray , getProductData }
 
-export  { productStore }
+
+export  { productStore}
