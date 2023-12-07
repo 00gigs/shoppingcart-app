@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Navbarcomponent from './components/navbar';
+import {container} from 'react-bootstrap'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import React from 'react';
+import Cancel from './pages/CancelM'
+import Success from './pages/Success';
+import Store from './pages/StoreM';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <container>
+  <Navbarcomponent></Navbarcomponent>
+  <BrowserRouter>
+  <Routes>
+    <Route index element={<Store/>}/>
+    <Route path='Success' element={<Success/>}/>
+    <Route path='Cancel' element={<Cancel/>}/>
+  </Routes>
+  </BrowserRouter>
+    </container>
   );
 }
 
